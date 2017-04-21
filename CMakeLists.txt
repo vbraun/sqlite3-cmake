@@ -2,7 +2,7 @@ PROJECT(sqlite3)
 cmake_minimum_required(VERSION 2.8)
 
 include_directories(${CMAKE_SOURCE_DIR}/src)
-add_library(sqlite3 SHARED src/sqlite3.c src/sqlite3.h src/sqlite3ext.h)
+add_library(sqlite3 src/sqlite3.c src/sqlite3.h src/sqlite3ext.h)
 add_executable(sqlite src/sqlite3.c src/shell.c src/sqlite3.h src/sqlite3ext.h)
 target_link_libraries(sqlite m ${CMAKE_DL_LIBS})
 set_target_properties(sqlite PROPERTIES OUTPUT_NAME sqlite3)
